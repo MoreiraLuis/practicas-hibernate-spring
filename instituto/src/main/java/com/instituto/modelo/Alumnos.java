@@ -1,4 +1,4 @@
-package com.alumnos;
+package com.instituto.modelo;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,24 +37,39 @@ public class Alumnos {
 	
 	@Column(name = "username")
 	private String username;
-
+	
+	@Column(name = "password")
+	private String password;
+	
+	@Column(name = "foto")
+	private String foto;
+	
 	@Column(name = "direccion")
 	private String direccion;
 	
 	@Column(name = "telefono")
 	private Long telefono;
 	
+	@Column(name = "tipo_de_usuario")
+	private int tipo_de_usuario;
+	
+	@Column(name = "activo")
+	private int activo;
+	
 public Alumnos() {
 	
 }
 
-public Alumnos(Long id, String nombres, String apellidos, String username, String direccion, Long telefono) {
+public Alumnos(Long id, String nombres, String apellidos, String username, String password, String foto, String direccion, Long telefono, int tipo_de_usuario) {
 	this.id = id;
 	this.nombres = nombres;
 	this.apellidos = apellidos;
 	this.username = username;
+	this.password = password;
+	this.foto = foto;
 	this.direccion = direccion;
 	this.telefono = telefono;
+	this.tipo_de_usuario = tipo_de_usuario;
 }
 
 // SIN GETTER NI SETTER POR AHORA

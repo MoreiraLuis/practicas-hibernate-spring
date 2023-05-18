@@ -1,4 +1,4 @@
-package com.alumnosController;
+package com.instituto.Controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.alumnos.Alumnos;
-import com.alumnosRepository.AlumnosRepository;
+import com.instituto.Repository.AlumnosRepository;
+import com.instituto.modelo.Alumnos;
 
 
 
@@ -36,17 +36,17 @@ public class AlumnosController {
 	}
 	
 	@PostMapping("/usuarios")
-	public 	Alumnos createPais(@RequestBody Alumnos alumnos) {
+	public 	Alumnos createAlumnos(@RequestBody Alumnos alumnos) {
 		return repository.save(alumnos);
 	}
 	
 	@PutMapping("/usuarios/{id}")
-	public Alumnos updatePais(@PathVariable int id ,@RequestBody Alumnos alumnos) {
+	public Alumnos updateAlumnos(@PathVariable int id ,@RequestBody Alumnos alumnos) {
 		return repository.save(alumnos);
 	}
 	
 	@DeleteMapping("/usuarios/{id}")
-	public void deletePais(@PathVariable("id") Long id) {
+	public void deleteAlumnos(@PathVariable("id") Long id) {
 		repository.deleteById(id);
 	}
 }
